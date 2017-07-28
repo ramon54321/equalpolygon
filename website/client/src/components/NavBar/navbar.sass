@@ -1,0 +1,68 @@
+@import "../../style.sass"
+
+.navbarDisplacer
+  font-size: 10pt
+  height: 5em
+  width: 100%
+
+.navbarContainer
+  font-size: 10pt
+  position: fixed
+  justify-content: center
+  display: flex
+  left: 0
+  right: 0
+  top: 0
+  height: 5em
+  background-color: $color_primary_dark
+
+.navButtonLogo
+  position: relative
+  width: 10ch
+  margin-left: 2ch
+  margin-right: 2ch
+  height: 100%
+
+.navButtonContainer
+  position: relative
+  width: 10ch
+  margin-left: 2ch
+  margin-right: 2ch
+  margin-top: 2em
+  height: 1.5em
+  @media #{$media_small}
+    width: 20ch
+    margin-top: 1.5em
+
+.navButton
+  height: 1.5em
+  text-align: center
+  color: $color_primary_light
+  cursor: pointer
+  transition: 0.3s
+  @media #{$media_small}
+    font-size: 18pt
+
+  &::after
+    position: absolute
+    bottom: 0
+    @media #{$media_small}
+      bottom: -0.5em
+    left: 50%
+    width: 0%
+    height: 1px
+    border-radius: 2px
+    background-color: $color_secondary_accent
+    transition-duration: 0.2s
+    transition-timing-function: ease-in
+    content: ''
+
+  &:hover::after
+    bottom: 0
+    @media #{$media_small}
+      bottom: -0.5em
+    left: 0
+    width: 100%
+
+  &:hover
+    color: $color_secondary_accent

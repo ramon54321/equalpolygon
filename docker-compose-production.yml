@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+  website-service:
+    build: ./website
+    ports:
+      - 80:80
+  database-service:
+    build: ./database
+    volumes:
+      - /root/equalpolygondata:/data/db
